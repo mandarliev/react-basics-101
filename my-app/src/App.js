@@ -13,10 +13,17 @@ import Product from "./Product";
 
 // Functional component
 function App() {
-
   const isMale = true;
 
   const [count, setCount] = useState(0);
+  const [todos, setTodos] = useState([]);
+  const [input, setInput] = useState("");
+
+  const addTodo = (e) => {
+    e.preventDefault(); // This prevents a REFRESH
+    setTodos([...todos, input]);
+    setInput("");
+  };
 
   const increment = () => {
     setCount(count + 1);
@@ -60,6 +67,22 @@ function App() {
         description="Your Favourite Computer"
         price={2499}
       />
+      <h1>Welcome to my TODO list</h1>
+      <form>
+        <input
+          value={input}
+          type="text"
+          onChange={(e) => setInput(e.target.value)}
+        />
+        <button type="submit" onClick={addTodo}>
+          Add todo
+        </button>
+      </form>
+
+      <h2>List of Todos</h2>
+      {todos.map((todo) => (
+        <p>{todo}</p>
+      ))}
     </div>
   );
 }
