@@ -13,7 +13,6 @@ import Product from "./Product";
 
 // Functional component
 function App() {
-  const name = "Dimitar";
   const isMale = true;
 
   const [count, setCount] = useState(0);
@@ -45,11 +44,21 @@ function App() {
       <button onClick={increment}>+</button>
       <button onClick={decrement}>-</button>
 
-      <Product name='Amazon Echo' description='Your AI assistant' price={59.99}/>
-      {/* Product name, description, price */}
-      {/* Product name, description, price */}
-      {/* Product name, description, price */}
-      {/* Product name, description, price */}
+      <Product
+        name="Amazon Echo"
+        description="Your AI assistant"
+        price={59.99}
+      />
+      <Product
+        name="iPhone 12 Pro Max"
+        description="The best iPhone"
+        price={1200}
+      />
+      <Product
+        name="Macbook Pro"
+        description="Your Favourite Computer"
+        price={2499}
+      />
     </div>
   );
 }
