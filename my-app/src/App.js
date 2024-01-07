@@ -22,7 +22,7 @@ function App() {
   };
 
   const decrement = () => {
-    setCount(count -1);
+    setCount(count - 1);
   };
   function getGreeting(user) {
     if (user) {
