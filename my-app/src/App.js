@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Header from "./Header";
+import Product from "./Product";
 
 /**
  *
@@ -43,6 +44,12 @@ function App() {
       <h2>The count is {count}</h2>
       <button onClick={increment}>+</button>
       <button onClick={decrement}>-</button>
+
+      <Product name='Amazon Echo' description='Your AI assistant' price={59.99}/>
+      {/* Product name, description, price */}
+      {/* Product name, description, price */}
+      {/* Product name, description, price */}
+      {/* Product name, description, price */}
     </div>
   );
 }
