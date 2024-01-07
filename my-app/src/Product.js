@@ -1,5 +1,6 @@
 import React from "react";
 import ItemDescription from "./ItemDescription";
+import "./Product.css";
 
 function Product({ name, description, price }) {
   /*
@@ -8,9 +9,10 @@ function Product({ name, description, price }) {
     ({name, description, price})
 */
   return (
-    <div>
+    <div className="product">
       <ItemDescription name={name} description={description} />
-      <h3>${price}</h3>
+      <h2 className="product__error">An error occured</h2>
+      <h3 className="product__price">${price}</h3>
     </div>
   );
 }

@@ -13,6 +13,7 @@ import Product from "./Product";
 
 // Functional component
 function App() {
+
   const isMale = true;
 
   const [count, setCount] = useState(0);
