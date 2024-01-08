@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { basketState, numberOfItemInBasket } from "./atoms/basketState";
 
@@ -27,7 +27,7 @@ function Product({ id, title, price }) {
     } else {
       console.warn(`Can't remove product (id: ${id}) as its not in basket!`);
     }
-    setBasket(newBasket);
+    setBasket(newBasket)
   };
   return (
     <div>
