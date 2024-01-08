@@ -61,6 +61,8 @@ function App() {
                   window.removeEventListener("resize", updateWindowWidth)
                 }
           }, [])
+
+    Info: https://react.dev/reference/react/useEffect
   */
 
   const addTodo = (e) => {
