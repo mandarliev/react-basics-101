@@ -19,6 +19,18 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
 
+  /*
+  1) Only call hooks (useState & useEffect) at the TOP level
+      - This means don't call hooks inside loops, conditions or nested functions
+      - Always use Hooks at the top level of your react function
+      - By following this rule, you ensure hooks are called in the same order each time a component renders
+      - This allows react to correctly preserve the state of hooks between useState / useEffect calls
+  
+  2) Don't call hooks from regular JS functions
+      - Call hooks from React FC's
+      - Call hooks from custom hooks
+  */
+
   const addTodo = (e) => {
     e.preventDefault(); // This prevents a REFRESH
     setTodos([...todos, input]);
