@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./Header";
 import Product from "./Product";
@@ -14,6 +14,8 @@ import Product from "./Product";
 // Functional component
 function App() {
   const isMale = true;
+  // That's for the custom hook example with Chuck Norris
+  const [joke, setJoke] = useState("");
 
   // Adding the windowWidth just for later reference
   // const [windowWidth, setWindowWidth] = useState(window.innerWidth)
@@ -64,6 +66,20 @@ function App() {
 
     Info: https://react.dev/reference/react/useEffect
   */
+
+  /**
+   * Let's create a custom hook!
+   */
+  useEffect(() => {
+    const fetchJoke = async () =>
+      await fetch(`https://api.chucknorris.io/jokes/random`)
+        .then((res) => res.json())
+        .then((data) => {
+          setJoke(data.value);
+        });
+
+    fetchJoke();
+  }, []);
 
   const addTodo = (e) => {
     e.preventDefault(); // This prevents a REFRESH
@@ -129,6 +145,8 @@ function App() {
       {todos.map((todo) => (
         <p>{todo}</p>
       ))}
+      <h1>The Joke Generator</h1>
+      <h2>{joke}</h2>
     </div>
   );
 }
