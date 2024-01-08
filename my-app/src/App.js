@@ -101,6 +101,14 @@ function App() {
     return <h1>Hello, Stranger.</h1>;
   }
 
+  /**
+   * useRef()
+   * 
+   * Ref is a special attribute that is available on any React component. They allow us to create a reference to an element.
+
+    A useRef hook basically points to a certain element and gets the value from it. The most common application for a useRef hook is when dealing with forms.
+   */
+
   return (
     <div className="app">
       <Header />
