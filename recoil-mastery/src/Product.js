@@ -4,7 +4,7 @@ import { basketState, numberOfItemInBasket } from "./atoms/basketState";
 
 function Product({ id, title, price }) {
   const [basket, setBasket] = useRecoilState(basketState);
-  // const [count, setCount] = useState(0);
+
   const count = useRecoilValue(numberOfItemInBasket(id));
 
   console.log(basket);
@@ -27,7 +27,7 @@ function Product({ id, title, price }) {
     } else {
       console.warn(`Can't remove product (id: ${id}) as its not in basket!`);
     }
-    setBasket(newBasket)
+    setBasket(newBasket);
   };
   return (
     <div>
