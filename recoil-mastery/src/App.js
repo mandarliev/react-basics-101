@@ -1,9 +1,19 @@
-import './App.css';
+import { useRecoilState, useRecoilValue } from "recoil";
+import { basketState } from "./atoms/basketState";
+import "./App.css";
+import Product from "./Product";
 
 function App() {
+  const basket = useRecoilValue(basketState);
+
   return (
     <div className="App">
-      <h1>Hello</h1>      
+      <h1>Our Shopping App</h1>
+      <h2>The total number of items in your basket: {basket.length}</h2>
+      <br />
+      <Product id={123123} title="iPhone 12" price={999} />
+      <br />
+      <Product id={465645} title="iPad" price={1599} />
     </div>
   );
 }
