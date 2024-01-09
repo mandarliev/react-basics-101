@@ -8,7 +8,7 @@ const options = {
   method: "GET",
   url: "https://open-weather-map27.p.rapidapi.com/weather",
   headers: {
-    "X-RapidAPI-Key": "0ca030f99amshf53c07229b47eb7p13a768jsn6c2df59a7595",
+    "X-RapidAPI-Key": "d0fffd0ba5mshb0114a118f9c544p1ec4aajsn601f47252df5",
     "X-RapidAPI-Host": "open-weather-map27.p.rapidapi.com",
   },
 };
