@@ -1,25 +1,21 @@
-import { useRef, useState } from "react";
 import "./App.css";
 import { Button, TextField } from "@mui/material";
 import axios from "axios";
+import { useForm } from "react-hook-form";
 
 function App() {
-  const nameInputRef = useRef(null);
-  const ageInputRef = useRef(null);
-  const salaryInputRef = useRef(null);
-  const hobbyInputRef = useRef(null);
+  const { register, handleSubmit } = useForm();
 
-  const [name, setName] = useState("");
+  const submitFormToGoogle = (data) => {
+    console.log(data);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Submitted");
+    const { name, age, salary, hobby } = data;
 
     const tableData = {
-      name: nameInputRef.current.value,
-      age: ageInputRef.current.value,
-      salary: salaryInputRef.current.value,
-      hobby: hobbyInputRef.current.value,
+      name,
+      age,
+      salary,
+      hobby,
     };
 
     console.log(tableData);
@@ -39,30 +35,34 @@ function App() {
       <h1>Hello World</h1>
       <form>
         <TextField
-          inputRef={nameInputRef}
+          name="name"
+          {...register("name", { required: true })}
           id="outlined-basic"
           label="Name"
           variant="standard"
         />
         <TextField
-          inputRef={ageInputRef}
+          name="age"
+          {...register("age", { required: true })}
           id="outlined-basic"
           label="Age"
           variant="standard"
         />
         <TextField
-          inputRef={salaryInputRef}
+          name="salary"
+          {...register("salary", { required: true })}
           id="outlined-basic"
           label="Salary"
           variant="standard"
         />
         <TextField
-          inputRef={hobbyInputRef}
+          name="hoby"
+          {...register("hobby", { required: true })}
           id="outlined-basic"
           label="Hobby"
           variant="standard"
         />
-        <Button type="submit" onClick={handleSubmit}>
+        <Button type="submit" onClick={handleSubmit(submitFormToGoogle)}>
           Submit
         </Button>
       </form>
