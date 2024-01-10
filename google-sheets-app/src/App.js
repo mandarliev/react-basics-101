@@ -7,6 +7,7 @@ function App() {
   const { register, handleSubmit } = useForm();
 
   const submitFormToGoogle = (data) => {
+    console.log("You submitted the form");
     axios
       .post(
         "https://sheet.best/api/sheets/2608afde-a761-41c4-9c24-39006e13bf62",
