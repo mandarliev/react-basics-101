@@ -6,21 +6,17 @@ import { useForm } from "react-hook-form";
 function App() {
   const { register, handleSubmit } = useForm();
 
-  const submitFormToGoogle = ({ name, age, salary, hobby }) => {
+  const submitFormToGoogle = (data) => {
     axios
       .post(
         "https://sheet.best/api/sheets/2608afde-a761-41c4-9c24-39006e13bf62",
-        {
-          name,
-          age,
-          salary,
-          hobby,
-        }
+        data
       )
       .then((response) => {
         alert("Row successfully added");
         console.log(response);
-      });
+      })
+      .catch((error) => alert(error.message));
   };
 
   return (
