@@ -4,7 +4,11 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 
 function App() {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
 
   const submitFormToGoogle = (data) => {
     console.log("You submitted the form");
@@ -31,6 +35,9 @@ function App() {
           label="Name"
           variant="standard"
         />
+        {errors.name?.type === "required" && (
+          <p role="alert">Name is required</p>
+        )}
         <TextField
           name="age"
           {...register("age", { required: true })}
@@ -38,6 +45,8 @@ function App() {
           label="Age"
           variant="standard"
         />
+        {errors.age?.type === "required" && <p role="alert">Age is required</p>}
+
         <TextField
           name="salary"
           {...register("salary", { required: true })}
@@ -45,14 +54,26 @@ function App() {
           label="Salary"
           variant="standard"
         />
+        {errors.salary?.type === "required" && (
+          <p role="alert">Salary is required</p>
+        )}
+
         <TextField
-          name="hoby"
+          name="hobby"
           {...register("hobby", { required: true })}
           id="outlined-basic"
           label="Hobby"
           variant="standard"
         />
-        <Button type="submit" onClick={handleSubmit(submitFormToGoogle)} variant="outlined">
+        {errors.hobby?.type === "required" && (
+          <p role="alert">Hobby is required</p>
+        )}
+
+        <Button
+          type="submit"
+          onClick={handleSubmit(submitFormToGoogle)}
+          variant="outlined"
+        >
           Submit
         </Button>
       </form>
