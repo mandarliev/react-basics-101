@@ -20,7 +20,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="app">
       <h1>Hello World</h1>
       <form>
         <TextField
@@ -51,7 +51,7 @@ function App() {
           label="Hobby"
           variant="standard"
         />
-        <Button type="submit" onClick={handleSubmit(submitFormToGoogle)}>
+        <Button type="submit" onClick={handleSubmit(submitFormToGoogle)} variant="outlined">
           Submit
         </Button>
       </form>
