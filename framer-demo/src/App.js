@@ -6,7 +6,6 @@ import Example from "./Example";
 function App() {
   return (
     <div className="app">
-      <h1>asdsad</h1>
       <div>
         <Example />
       </div>

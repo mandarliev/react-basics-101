@@ -1,11 +1,10 @@
 .app {
-    height: 100vh;
-    width: 100%;
-    background-color: brown;
+    margin: 0px;
 }
 
 .app__container {
-    background: white;
+margin-top: 20px;
+    background: red;
     border-radius: 30px;
     width: 150px;
     height: 150px;
