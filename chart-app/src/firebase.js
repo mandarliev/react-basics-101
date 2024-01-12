@@ -1,6 +1,9 @@
-import firebase from "firebase/compat/app";
-import "firebase/compat/auth";
-import "firebase/compat/firestore";
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+import { GoogleAuthProvider } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+
+
 
 /**
  * These are new updates: 
@@ -17,9 +20,9 @@ const firebaseConfig = {
   appId: "1:668701283923:web:0fa4373a1894fe49bf18a6",
 };
 
-const app = firebase.initializeApp(firebaseConfig);
-const db = app.firestore();
-const provider = new firebase.auth.GoogleAuthProvider();
-const auth = firebase.auth();
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const provider = new GoogleAuthProvider();
+const auth = auth();
 
 export { db, provider, auth };

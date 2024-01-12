@@ -1,6 +1,6 @@
 import ApexChart from "./ApexChart";
 import "./App.css";
-import React from "react";
+import React, { Component } from "react";
 import { auth, provider } from "./firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
@@ -15,9 +15,7 @@ function App() {
   return (
     <div className="App">
       <h1>Hello</h1>
-      {loading ? (
-        <h1>LOADING</h1>
-      ) : user ? (
+      {user ? (
         <ApexChart />
       ) : (
         <button onClick={signIn}>Sign in with Google</button>
