@@ -1,5 +1,6 @@
 import React, { Component, useState } from "react";
 import Chart from "react-apexcharts";
+import { auth } from "./firebase";
 
 const ApexChart = () => {
   const [chartConfig, setChartConfig] = useState({
@@ -57,6 +58,7 @@ const ApexChart = () => {
         type="line"
         height={350}
       />
+      <button onClick={() => auth.signOut()}>Sign Out</button>
     </div>
   );
 };
